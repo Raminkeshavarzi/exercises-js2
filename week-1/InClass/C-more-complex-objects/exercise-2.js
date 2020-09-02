@@ -31,6 +31,9 @@ let newCurrentOwner = {
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
 */
+
+//The ( === equality ) comparison between objects or arrays will throw an error if we do not reassign the value of our obj or arr properly. 
+//So, Please add this crucial point into the Curriculum of the program to avoid the following misunderstanding of === equality in var that passed by reference.
 console.log(
   `Did you correctly assign the new owner using the given variable?","Expected result: true. Actual result: " ${
     house.currentOwner === newCurrentOwner
