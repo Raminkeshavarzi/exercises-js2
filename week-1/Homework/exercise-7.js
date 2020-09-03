@@ -6,39 +6,51 @@ and for each object, `console.log()` out the sentence:
 
 Here is the array:
 
-*/ 
+*/
 
 var writers = [
-  {
-    firstName: "Virginia",
-    lastName: "Woolf",
-    occupation: "writer",
-    age: 59,
-    alive: false
-  },
-  {
-    firstName: "Zadie",
-    lastName: "Smith",
-    occupation: "writer",
-    age: 41,
-    alive: true
-  },
-  {
-    firstName: "Jane",
-    lastName: "Austen",
-    occupation: "writer",
-    age: 41,
-    alive: false
-  },
-  {
-    firstName: "bell",
-    lastName: "hooks",
-    occupation: "writer",
-    age: 64,
-    alive: true
-  },
+	{
+		firstName: 'Virginia',
+		lastName: 'Woolf',
+		occupation: 'writer',
+		age: 59,
+		alive: false
+	},
+	{
+		firstName: 'Zadie',
+		lastName: 'Smith',
+		occupation: 'writer',
+		age: 41,
+		alive: true
+	},
+	{
+		firstName: 'Jane',
+		lastName: 'Austen',
+		occupation: 'writer',
+		age: 41,
+		alive: false
+	},
+	{
+		firstName: 'bell',
+		lastName: 'hooks',
+		occupation: 'writer',
+		age: 64,
+		alive: true
+	}
 ];
 
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+for (let i = 0; i < writers.length; i++) {
+	writers[i].alive
+		? console.log(
+				`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i]
+					.age} years old, and work as a ${writers[i].occupation}.`
+			)
+		: console.log(
+				`${writers[i].firstName}  ${writers[i].lastName} died at ${writers[i]
+					.age} years old, and work as a ${writers[i].occupation}.`
+			);
+}

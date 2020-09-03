@@ -18,9 +18,16 @@ let house = {
 
   WRITE YOUR CODE BELOW
 */
+const changeAdd = (obj, val) => obj.address = val;
+changeAdd(house, '51 Berkley Road');
 
-// - change the address of "house" to '51 Berkley Road'
-// - change the previous owners of "house" to ["Brian M.", "Fiona S."]
+const changeOwner = (obj, arr) => obj.previousOwners = arr;
+changeOwner(house, ["Brian M.", "Fiona S."]);
+
+const changeLastName = (obj, val) => obj.currentOwner.lastName = val;
+changeLastName(house, 'Montgomery')
+
+// changeLastName(house);
 // - change the last name of the current owner of "house" to "Montgomery"
 
 /*

@@ -7,45 +7,60 @@ Each destination has a name, a distance from Glasgow, and a list of transportati
 3) Print in the console all the destination names more than 300 kms far away and reachable by train.
 */
 
-
 let destination1 = {
-    destinationName: "Edinburgh",
-    distanceKms: 80,
-    transportations: ["car", "bus", "train"]
+	destinationName: 'Edinburgh',
+	distanceKms: 80,
+	transportations: [ 'car', 'bus', 'train' ]
 };
 
 let destination2 = {
-    destinationName: "London",
-    distanceKms: 650,
-    transportations: ["car", "bus", "train"]
+	destinationName: 'London',
+	distanceKms: 650,
+	transportations: [ 'car', 'bus', 'train' ]
 };
 
 let destination3 = {
-    destinationName: "Paris",
-    distanceKms: 900,
-    transportations: ["train", "plane"]
+	destinationName: 'Paris',
+	distanceKms: 900,
+	transportations: [ 'train', 'plane' ]
 };
 
 let destination4 = {
-    destinationName: "Dublin",
-    distanceKms: 350,
-    transportations: ["plane", "ferry"]
+	destinationName: 'Dublin',
+	distanceKms: 350,
+	transportations: [ 'plane', 'ferry' ]
 };
 
-let travelDestinations = [destination1, destination2, destination3, destination4];
+let travelDestinations = [ destination1, destination2, destination3, destination4 ];
 
 /*
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+const within500 = [];
+for (let i = 0; i < travelDestinations.length; i++) {
+	if (travelDestinations[i].distanceKms < 500) {
+		within500.push(travelDestinations[i].destinationName);
+	}
+}
+let destinationNamesWithin500Kms = within500.toString();
 
+// const within500 = [];
 
-let destinationNamesWithin500Kms = // Complete here
+let destinationNameReachableByFerry; // Complete here
+for (let i = 0; i < travelDestinations.length; i++) {
+	if (travelDestinations[i].transportations.includes('ferry')) {
+		destinationNameReachableByFerry = travelDestinations[i].destinationName;
+	}
+} // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
-let destinationNameReachableByFerry = // Complete here
-
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
-
+const byTrainand300 = [];
+for (let i = 0; i < travelDestinations.length; i++) {
+	if (travelDestinations[i].distanceKms > 300 && travelDestinations[i].transportations.includes('train')) {
+		byTrainand300.push(travelDestinations[i].destinationName);
+	}
+}
+let destinationNamesMoreThan300KmsAwayByTrain = byTrainand300.toString('');
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
