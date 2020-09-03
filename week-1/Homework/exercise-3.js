@@ -20,18 +20,19 @@ let coffeeMachine = {
 		return (this.insertedAmount = amount);
 	},
 	getCoffee: function(coffe) {
-		let keys = Object.keys(this.prices);
-		let getCoffe = this.prices.coffe;
-		for (let i = 0; i < keys.length; i++) {
-			if (keys[i] === getCoffe && getCoffe < this.insertMoney) {
-				return getCoffe;
-			}
+		if (coffe === 'blackCoffee' && this.prices.blackCoffee < this.insertedAmount) {
+			return 'blackCoffee';
+		} else if (coffe === 'cappuccino' && this.prices.cappuccino < this.insertedAmount) {
+			return 'cappuccino';
+		} else if (coffe === 'flatWhite' && this.prices.flatWhite < this.insertedAmount) {
+			return 'flatWhite';
+		} else {
+			return coffe;
 		}
 	}
 };
 
 // coffeeMachine.insertMoney(1.5);
-console.log(coffeeMachine.insertMoney(2));
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
@@ -54,12 +55,3 @@ console.log(
 		'flatWhite'
 	)}`
 );
-
-// for (const [key, value] of Object.entries(this.prices)) {
-//   if (`${key === coffe}`) {
-//     if (`${value < this.insertedAmount}`) {
-//       return (result = `${key}`);
-//     } else {
-//       return `Sorry you don't have enough money for a ${key}`;
-//     }
-//   }
