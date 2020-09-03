@@ -24,8 +24,7 @@ let newCurrentOwner = {
   WRITE YOUR CODE BELOW
 */
 const addNewCurrentOwner = (obj1, obj2) => {
-	obj1.currentOwner.firstName = obj2.firstName;
-	obj1.currentOwner.lastName = obj2.lastName;
+	obj1 = obj2;
 };
 addNewCurrentOwner(house, newCurrentOwner);
 
