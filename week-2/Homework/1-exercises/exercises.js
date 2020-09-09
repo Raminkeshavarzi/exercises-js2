@@ -33,7 +33,14 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-	//Write your code in here
+	let content = document.querySelector('#content');
+	let ul = document.createElement('ul');
+	content.appendChild(ul);
+	shopping.filter((ele) => {
+		let li = document.createElement('li');
+		li.innerText = ele;
+		ul.appendChild(li);
+	});
 }
 
 /**
@@ -64,9 +71,24 @@ function exerciseTwo(shopping) {
     - Change the style of the book depending on whether you have read it (green) or not (red).
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
+
 **/
 function exerciseThree(books) {
-	//Write your code in here
+	let content = document.querySelector('#content');
+	let h1 = document.createElement('h1');
+	let ul = document.createElement('ul');
+
+	content.appendChild(h1);
+	h1.appendChild(ul);
+
+	books.filter((ele) => {
+		let li = document.createElement('li');
+		let p = document.createElement('p');
+		ul.appendChild(li);
+		li.appendChild(p);
+		p.innerText = `${ele.title}  - ${ele.author}`;
+		ele.alreadyRead ? (li.style.backgroundColor = 'green') : (li.style.backgroundColor = 'red');
+	});
 }
 
 //
