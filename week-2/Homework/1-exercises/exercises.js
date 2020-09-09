@@ -14,7 +14,15 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+	let content = document.querySelector('#content');
+	arrayOfPeople.filter((ele) => {
+		let heading1 = document.createElement('h1');
+		let heading2 = document.createElement('h2');
+		heading1.innerText = ele.name;
+		content.appendChild(heading1);
+		heading2.innerHTML = ele.job;
+		content.appendChild(heading2);
+	});
 }
 
 /**
@@ -25,7 +33,7 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+	//Write your code in here
 }
 
 /**
@@ -58,7 +66,7 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+	//Write your code in here
 }
 
 //
@@ -72,33 +80,33 @@ function exerciseThree(books) {
 //
 
 let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+	{ name: 'Chris', job: 'Teacher' },
+	{ name: 'Joanna', job: 'Student' },
+	{ name: 'Boris', job: 'Prime Minister' }
 ];
 
 exerciseOne(people);
 
-let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
+let shopping = [ 'Milk', 'Break', 'Eggs', 'A Dinosaur', 'Cake', 'Sugar', 'Tea' ];
 
 exerciseTwo(shopping);
 
 const books = [
-  {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    alreadyRead: false
-  },
-  {
-    title: "The Most Human Human",
-    author: "Brian Christian",
-    alreadyRead: true
-  },
-  {
-    title: "The Pragmatic Programmer",
-    author: "Andrew Hunt",
-    alreadyRead: true
-  }
+	{
+		title: 'The Design of Everyday Things',
+		author: 'Don Norman',
+		alreadyRead: false
+	},
+	{
+		title: 'The Most Human Human',
+		author: 'Brian Christian',
+		alreadyRead: true
+	},
+	{
+		title: 'The Pragmatic Programmer',
+		author: 'Andrew Hunt',
+		alreadyRead: true
+	}
 ];
 
 exerciseThree(books);
