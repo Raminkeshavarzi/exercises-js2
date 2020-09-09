@@ -13,9 +13,19 @@ Write JavaScript below that logs:
 
     4. all the "p" elements of contained inside  the .primary-content element node
     --> should log a list of nodes with a length of 3
-
 */
 
+let pElement = document.querySelectorAll('p');
+console.log(pElement);
+
+let firstDiv = document.querySelector('div');
+console.log(firstDiv);
+
+let firstiD = document.querySelector('#jumbotron-text');
+console.log(firstiD);
+
+let pClass = document.querySelectorAll('.primary-content p');
+console.log(pClass);
 
 /*
 Task 2
@@ -24,6 +34,13 @@ Task 2
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
 
+let buttonElement = document.querySelector('#alertBtn');
+buttonElement.addEventListener(
+	'click',
+	(alertSomething = () => {
+		alert('Thanks for visiting Bikes for Refugees!');
+	})
+);
 
 /*
 Task 3
@@ -31,16 +48,31 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
-
-
+let buttonElement1 = document.querySelector('#alertBtn');
+buttonElement1.addEventListener(
+	'click',
+	(alertSomething = () => {
+		buttonElement1.style.backgroundColor = 'red';
+	})
+);
 /*
 Task 4
 ======
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
+let addTextButton = document.querySelector('#addTextBtn');
 
-
+addTextButton.addEventListener(
+	'click',
+	(alertSomething = () => {
+		let paragraph = document.createElement('p', () => {
+			<p>Do you like to help us?</p>;
+			p.style.color = 'black';
+		});
+		addTextButton.appendChild(paragraph);
+	})
+);
 
 /*
 Task 5
@@ -48,7 +80,6 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
-
 
 /*
 Task 6
@@ -67,4 +98,3 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-
