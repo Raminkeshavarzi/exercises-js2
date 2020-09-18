@@ -72,6 +72,7 @@ btnStop.addEventListener('click', () => {
     toStop()
 })
 
+
 // Functions
 const skipPhoto = () => {
     if(nextPhotoNumber < maximum){
@@ -89,8 +90,10 @@ const backPhoto = () => {
     }
 }
 
+let auto;
+
 const forwardAutomatically = () => {
-    const auto = setInterval(increment, 5000);
+    auto = setInterval(increment, 2000);
     function increment (){
     nextPhotoNumber+= 1 ;
     const changePhotos = document.getElementById('image').src = `${photo[nextPhotoNumber].img}`;
@@ -100,9 +103,9 @@ const forwardAutomatically = () => {
         clearInterval(auto)
         } 
     }
-}
+} 
 const backwardAutomatically = () => {
-    const auto = setInterval(decrease, 5000);
+    auto = setInterval(decrease, 1000);
     function decrease (){
     autoback-= 1 ;
     const changePhotos = document.getElementById('image').src = `${photo[autoback].img}`;
@@ -115,12 +118,8 @@ const backwardAutomatically = () => {
 }
 
 const toStop = () => {
-    if(autoback < photo.length){
-        const back = setInterval(backwardAutomatically, 1000);
-        clearInterval(back);
-    } 
-    const forward = setInterval(forwardAutomatically, 1000);
-    clearInterval(forward)
+    console.log('stop')
+    clearInterval(auto)
 }
 
-// 
+// My mistake was scope
